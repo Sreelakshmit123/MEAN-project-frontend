@@ -1,0 +1,57 @@
+<app-header></app-header>
+ <div>
+     <!-- Header-->
+     <header>
+        <div  id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner"style="height: 500px;"  >
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://www.dadreeios.com/public/backend-assets/uploads/home_page_section_child_images/169601789199.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img style="height: 600px;"  src="https://akns-images.eonline.com/eol_images/Entire_Site/2022719/rs_1200x1200-220819094906-1200-Palms-ShopGirlSummer.jpg?fit=around%7C1080:540&output-quality=90&crop=1080:540;center,top" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://img-va.myshopline.com/image/store/3400003311/1627028707601/e7bd60e94ef44e03b0e7a77fdcb2e79f.gif?w=2700&h=1300" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </header>
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div *ngFor="let product of allProducts" class="col mb-5">
+                    <div class="card h-100 p-1">
+                        <!-- Product image-->
+                        <img style="height: 200px;" routerLink="/{{product.id}}/view" class="card-img-top" [src]="product.image" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">{{product.title.slice(0,20)}}...</h5>
+                                <!-- Product price-->
+                                ${{product.price}}
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                          <button (click)="addToWishlist(product)" class="btn fs-4"><i class="fa-solid fa-heart text-danger"></i></button>
+                          <button (click)="addToCart(product)"  class="btn fs-4"><i class="fa-solid fa-cart-plus text-success"></i></button>
+
+                        </div>
+                    </div>
+                </div>
+                
+               
+            </div>
+        </div>
+    </section>
+    
+ </div>
