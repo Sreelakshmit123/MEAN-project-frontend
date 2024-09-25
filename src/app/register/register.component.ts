@@ -24,6 +24,7 @@ export class RegisterComponent {
       const email = this.registerForm.value.email
       const password = this.registerForm.value.password
       console.log(username,email,password);
+      // api
       const user = {username,email,password}
       this.api.registerApi(user).subscribe({
           next:(result:any)=>{

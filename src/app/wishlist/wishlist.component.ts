@@ -23,11 +23,11 @@ export class WishlistComponent implements OnInit{
     })
   }
 
-  deleteWishlist(id:any){
-    this.api.removeWishlistAPI(id).subscribe((result:any)=>{
-      this.getWishlist()
-    })
-  }
+    deleteWishlist(id:any){
+      this.api.removeWishlistAPI(id).subscribe((result:any)=>{
+        this.getWishlist()
+      })
+    }
 
   addToCart(product:any){
     if(sessionStorage.getItem("token")){
